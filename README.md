@@ -2,7 +2,7 @@
 
 Simple admin dashboard allowing users to control their application or website
 
-[▶ Live Preview](N/A)
+[▶ Live Preview](https://petromirkolev.github.io/TOP_Project_admin-dashboard/)
 
 # 🚀Features
 
@@ -12,12 +12,14 @@ Simple admin dashboard allowing users to control their application or website
 
 # 🔨 To-Do
 
-- [ ] Create layout and design
+- [ ] Create responsive layout
+- [ ] Hook up JavaScript functionality
 
 ### ✔ Done
 
 - [x] Create README
+- [x] Create layout and design
 
 # 📖 Bugs to fix
 
-N/A
+The admin panel is not responsive yet and all kinds of visual bugs are happening when the screen is resized.
