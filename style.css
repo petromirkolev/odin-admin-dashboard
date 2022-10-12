@@ -1,168 +1,122 @@
-/*
-CSS Reset
-*/
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+/* CSS reset */
+* {
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+/* Import fonts */
+@font-face {
+  font-family: "ano-pro";
+  src: url(fonts/Anonymous\ Pro.ttf);
 }
-body {
-  line-height: 1;
+@font-face {
+  font-family: "ano-pro-b";
+  src: url(fonts/Anonymous\ Pro\ B.ttf);
 }
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* ==================== */
 /* Body styling */
+
 body {
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 16px;
 }
-/* Dashboard container */
+.material-symbols-outlined {
+  color: white;
+}
+.upper-menu,
+.dashboard {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
+}
+/* ===== Dashboard container ===== */
 .container {
+  box-sizing: border-box;
+  background-color: #000000;
   display: grid;
   height: 100vh;
-  grid-template-columns: minmax(350px, 1fr) minmax(650px, 5fr);
+  width: 100vw;
+  padding: 3vh 1vw 3vh 1vw;
+  grid-template-columns: 1fr 5fr;
 }
-
+/* === Sidebar styling === */
 .menu-section {
-  position: sticky;
-  top: 0;
-  height: 100%;
-
-  background-color: dimgray;
+  box-sizing: border-box;
+  position: relative;
+  font-family: "ano-pro";
+  color: white;
+  background-color: #191c24;
+  border-radius: 20px;
+  width: 15vw;
+  min-width: 220px;
+  height: 94vh;
+  padding: 0 1vw 0 1vw;
 }
-
-.upper-dashboard {
-  background-color: beige;
-  position: sticky;
-  top: 0;
+.menu-section a {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Sidebar home logo */
+.home-logo {
+  font-family: "ano-pro-b";
+  font-size: 1.2em;
+}
+/* Sidebar menu buttons */
+ol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2vh;
+}
+li {
+  padding-top: 2vh;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+/* === Upper menu styling === */
+.upper-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  font-size: 0.8em;
+  background-color: #191c24;
+  border-radius: 20px;
+  padding: 2vh 2vw 2vh 2vw;
 }
 .search-notification-bar {
   display: grid;
-  grid-template-columns: 1fr 5fr 0.5fr 0.5fr 3fr;
+  align-items: center;
+  grid-template-columns: repeat(100, 1fr);
 }
+.mso-search {
+  grid-column: 1 / 5;
+  padding-left: 2vw;
+}
+.search-bar {
+  grid-column: 6 / 84;
+  border-radius: 20px;
+  width: 50vw;
+  height: 3vh;
+  margin-right: 2vw;
+}
+.mso-notification {
+  grid-column: 86/88;
+}
+.admin-name {
+  grid-column: 90/100;
+  text-align: right;
+  margin-right: 1vw;
+}
+
 .admin-control-buttons {
   display: grid;
   width: 100%;
-  grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
 }
 
-.lower-dashboard {
+/* === Admin dashboard styling === */
+.dashboard {
   display: grid;
   grid-template-columns: minmax(600px, 3fr) minmax(200px, 1fr);
 }

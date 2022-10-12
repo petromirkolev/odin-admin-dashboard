@@ -4,25 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Admin Dashboard</title>
   </head>
   <body>
     <div class="container">
       <div class="menu-section">
-        <h1 class="home-logo"><img src="#" alt="#" /> Dashbord</h1>
-        <ul class="menu-navigation">
-          <li><img src="#" alt="#" /> Home</li>
-          <li><img src="#" alt="#" /> Profile</li>
-          <li><img src="#" alt="#" /> Messages</li>
-          <li><img src="#" alt="#" /> History</li>
-          <li><img src="#" alt="#" /> My submissions</li>
-          <li><img src="#" alt="#" /> Manage vets</li>
-          <li><img src="#" alt="#" /> Community reviews</li>
+        <ol class="menu-navigation">
+          <li class="home-logo">
+            <span class="material-symbols-outlined"> dashboard </span> Dashbord
+          </li>
+          <li><span class="material-symbols-outlined"> home </span> Home</li>
+          <li>
+            <span class="material-symbols-outlined"> person </span> Profile
+          </li>
+          <li>
+            <span class="material-symbols-outlined"> mail </span> Messages
+          </li>
+          <li>
+            <span class="material-symbols-outlined"> history </span> History
+          </li>
+          <li>
+            <span class="material-symbols-outlined"> outbox </span> My
+            submissions
+          </li>
+          <li>
+            <span class="material-symbols-outlined"> manage_accounts </span>
+            Manage vets
+          </li>
+          <li>
+            <span class="material-symbols-outlined"> reviews </span> Community
+            reviews
+          </li>
           <span></span>
-          <li><img src="#" alt="#" /> Users</li>
-          <li><img src="#" alt="#" /> Settings</li>
-        </ul>
+          <li><span class="material-symbols-outlined"> group </span> Users</li>
+          <li>
+            <span class="material-symbols-outlined"> history </span> Settings
+          </li>
+        </ol>
         <a href="https://github.com/petromirkolev">
           <img
             src="./images/GitHub-Mark-Light-120px-plus.png"
@@ -31,23 +54,26 @@
         /></a>
       </div>
       <div class="dashboard-section">
-        <div class="upper-dashboard">
+        <div class="upper-menu">
           <div class="search-notification-bar">
-            <img class="search-bar-icon" src="#" alt="#" />
+            <span class="material-symbols-outlined mso-search"> search </span>
             <input class="search-bar" type="text" />
-            <img src="#" alt="#" class="notification-icon" />
-            <img src="#" alt="#" class="admin-image" />
+            <span class="material-symbols-outlined mso-notification">
+              notifications
+            </span>
+            <span class="material-symbols-outlined mso-face"> face </span>
             <h2 class="admin-name">John Smith</h2>
           </div>
+
           <div class="admin-control-buttons">
-            <img src="#" alt="#" class="admin-image control-ai" />
             <h1 class="admin-name control-an">Hello, John Smith</h1>
-            <button class="new">New</button>
-            <button class="upload">Upload</button>
-            <button class="share">Share</button>
+            <button class="new">Add vet</button>
+            <button class="upload">Edit vet</button>
+            <button class="share">Delete vet</button>
           </div>
         </div>
-        <div class="lower-dashboard">
+
+        <div class="dashboard">
           <div class="ldb-left">
             <div class="ldb-heading">
               <h1>Your submissions</h1>
