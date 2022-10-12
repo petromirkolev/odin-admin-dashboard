@@ -127,15 +127,21 @@ table {
 }
 
 /* Begin styling */
+body {
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+}
 /* Dashboard container */
 .container {
   display: grid;
   width: 100vw;
-  height: 100vh;
   grid-template-columns: minmax(350px, 1fr) minmax(650px, 5fr);
 }
 
 .menu-section {
+  position: sticky;
+  top: 0;
   background-color: dimgray;
 }
 
@@ -144,6 +150,8 @@ table {
   background-color: darkkhaki;
 }
 .upper-dashboard {
+  position: sticky;
+  top: 0;
   box-sizing: inherit;
   display: flex;
   flex-direction: column;
@@ -151,7 +159,6 @@ table {
   justify-content: space-evenly;
   background-color: red;
   width: 100%;
-  height: 10%;
   min-height: 120px;
   padding: 0 30px 0 30px;
 }
@@ -176,18 +183,17 @@ table {
 }
 
 .lower-dashboard {
-  box-sizing: inherit;
   display: grid;
   grid-template-columns: minmax(600px, 3fr) minmax(200px, 1fr);
-
   background-color: rgba(144, 56, 56, 0.362);
   width: 100%;
-  height: 90%;
+  height: 100vh;
 }
 
 .ldb-left {
-  background-color: rgb(188, 188, 153);
+  background-color: teal;
+  display: grid;
+  grid-template-rows: 1fr 9fr;
 }
 .ldb-right {
-  background-color: lightpink;
 }
