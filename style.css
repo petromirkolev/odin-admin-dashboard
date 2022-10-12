@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+
 /* Import fonts */
 @font-face {
   font-family: "ano-pro";
@@ -12,8 +13,8 @@
   font-family: "ano-pro-b";
   src: url(fonts/Anonymous\ Pro\ B.ttf);
 }
-/* Body styling */
 
+/* Body styling */
 body {
   box-sizing: border-box;
   font-size: 16px;
@@ -22,11 +23,13 @@ body {
   color: white;
 }
 .upper-menu,
-.dashboard {
+.dashboard,
+.btn {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: white;
 }
+
 /* ===== Dashboard container ===== */
 .container {
   box-sizing: border-box;
@@ -34,9 +37,12 @@ body {
   display: grid;
   height: 100vh;
   width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
   padding: 3vh 1vw 3vh 1vw;
   grid-template-columns: 1fr 5fr;
 }
+
 /* === Sidebar styling === */
 .menu-section {
   box-sizing: border-box;
@@ -46,21 +52,19 @@ body {
   background-color: #191c24;
   border-radius: 20px;
   width: 15vw;
-  min-width: 220px;
+  min-width: 150px;
   height: 94vh;
   padding: 0 1vw 0 1vw;
+  margin-right: 1vw;
 }
-.menu-section a {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
 /* Sidebar home logo */
 .home-logo {
   font-family: "ano-pro-b";
+  text-decoration: underline;
   font-size: 1.2em;
 }
+
 /* Sidebar menu buttons */
 ol {
   display: flex;
@@ -74,16 +78,24 @@ li {
   align-items: center;
   gap: 1vw;
 }
+.home-logo {
+  color: #ab2e3c;
+}
+
 /* === Upper menu styling === */
 .upper-menu {
   display: flex;
   flex-direction: column;
+  height: 12vh;
+  width: 78vw;
   gap: 3vh;
   font-size: 0.8em;
   background-color: #191c24;
   border-radius: 20px;
   padding: 2vh 2vw 2vh 2vw;
 }
+
+/* Upper menu */
 .search-notification-bar {
   display: grid;
   align-items: center;
@@ -91,62 +103,190 @@ li {
 }
 .mso-search {
   grid-column: 1 / 5;
-  padding-left: 2vw;
+  padding-left: 1vw;
 }
 .search-bar {
-  grid-column: 6 / 84;
+  grid-column: 6 / 80;
   border-radius: 20px;
-  width: 50vw;
-  height: 3vh;
-  margin-right: 2vw;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 40rem;
+  height: 2rem;
+  font-size: 1.3rem;
+  padding-left: 1vw;
 }
 .mso-notification {
-  grid-column: 86/88;
+  grid-column: 81/83;
 }
 .admin-name {
-  grid-column: 90/100;
+  grid-column: 84/100;
   text-align: right;
   margin-right: 1vw;
 }
-
+/* Lower menu */
 .admin-control-buttons {
   display: grid;
-  width: 100%;
-  grid-template-columns: 3fr 1fr 1fr 1fr;
+  align-items: center;
+  grid-template-columns: repeat(100, 1fr);
+}
+.admin-control-buttons .btn {
+  text-transform: uppercase;
+  width: 15rem;
+  height: 2rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  color: white;
+  background-color: hsl(330, 70%, 50%);
+  transition: transform 100ms ease-in-out;
+}
+.admin-control-buttons .btn:hover {
+  background-color: #af1763;
+  transform: scale(1.05);
+}
+.admin-control-buttons .btn:active {
+  transform: scale(1.1);
+}
+.btn-admin-name {
+  grid-column: 1 / 20;
+  text-decoration: underline;
+}
+.admin-control-buttons .btn-add {
+  grid-column: 41 / 60;
+}
+.admin-control-buttons .btn-edit {
+  grid-column: 61 / 80;
+}
+.admin-control-buttons .btn-delete {
+  grid-column: 81 / 100;
 }
 
 /* === Admin dashboard styling === */
+/* Dashboard container */
 .dashboard {
   display: grid;
-  grid-template-columns: minmax(600px, 3fr) minmax(200px, 1fr);
+  margin-top: 3vh;
+  height: 75vh;
+  width: 78vw;
+  grid-template-columns: 3fr 1fr;
 }
 
+/* Left side of dashboard */
 .ldb-left {
-  background-color: teal;
   display: grid;
-  grid-template-rows:
-    minmax(50px, 0.3fr) minmax(200px, 1fr) minmax(200px, 1fr)
-    minmax(200px, 1fr);
-  grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
-  gap: 20px;
+  grid-template-rows: 0.3fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  width: 60vw;
 }
 .ldb-heading {
-  grid-column: 1 / 3;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  background-color: #ffc107;
+  color: #000000;
+  text-decoration: overline;
+  border-radius: 13px;
+  width: 29vw;
+  grid-column: 1 / 3;
 }
-.ldb-l-box {
-  background-color: red;
+.ldb-heading > h3 {
+  padding-left: 1vw;
 }
-.ldb-right {
-  background-color: rgb(105, 161, 36);
+.ldb-box {
+  text-align: center;
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2vh;
+  width: 29vw;
+  justify-content: space-evenly;
+  background-color: #191c24;
+}
+.ldb-box-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1vw;
+}
+.ldb-box-buttons button {
+  display: flex;
+  gap: 0.2vw;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.9rem;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  height: 1.5rem;
+  background-color: #198754;
+  color: white;
+  transition: transform 100ms ease-in-out;
+}
+.ldb-box-buttons > button:hover {
+  transform: scale(1.05);
+}
+.ldb-box-buttons > button:active {
+  transform: scale(1.1);
+}
+
+/* Right side of dashboard */
+.rdb-right {
   display: grid;
-  grid-template-columns: minmax(300px, 1fr);
-  grid-template-rows:
-    minmax(50px, 0.3fr) minmax(200px, 1fr) minmax(50px, 0.3fr)
-    minmax(200px, 1fr);
+  height: 75vh;
+  width: 19vw;
+  margin-left: 1vw;
+  grid-template-rows: 0.3fr 2fr 0.3fr 2fr;
+  grid-template-columns: 1fr;
+  gap: 1vw;
 }
-.ldb-r-box {
-  grid-column: 1 / 2;
-  background-color: red;
+.rdb-popular-vets,
+.rdb-trending-vets {
+  display: flex;
+  align-items: center;
+  background-color: #ffc107;
+  text-decoration: overline;
+  color: #000000;
+  border-radius: 10px;
+  padding-left: 1vw;
+  text-align: center;
+  width: 20vw;
+  font-size: 1.2rem;
+  grid-column: 1 / 3;
 }
+.rdb-box {
+  text-align: center;
+  border-radius: 20px;
+  width: 21vw;
+  background-color: #191c24;
+}
+
+/* Misc */
+hr {
+  margin: 1vh 0 1vh 0;
+}
+p {
+  font-size: 0.9rem;
+}
+.menu-section a {
+  text-decoration: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Testing only */
+/* @media only screen and (max-width: 1150px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .menu-section {
+    display: flex;
+    flex-direction: row;
+  }
+  .menu-section > ol {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.8em;
+  }
+} */
